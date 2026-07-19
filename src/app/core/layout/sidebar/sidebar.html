@@ -1,0 +1,23 @@
+<aside class="hidden w-64 shrink-0 border-r border-slate-200 bg-slate-950 text-white lg:block">
+  <div class="flex h-16 items-center border-b border-slate-800 px-6">
+    <h1 class="text-lg font-bold">Smart Admin</h1>
+  </div>
+
+  <nav class="p-4">
+    <p class="mb-3 px-3 text-xs font-semibold uppercase tracking-wide text-slate-400">Main</p>
+
+    <div class="space-y-1">
+      @for (item of navItems; track item.route) {
+        <a
+          [routerLink]="item.route"
+          routerLinkActive="bg-slate-800 text-white"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white"
+        >
+          <i [class]="item.icon"></i>
+          <span>{{ item.label }}</span>
+        </a>
+      }
+    </div>
+  </nav>
+</aside>
